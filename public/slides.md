@@ -472,3 +472,258 @@ Como o foco maior no gerenciamento de requisições, não possui uma solução o
 Aliado ao uso de PDO para banco de dados, encaixa-se perfeitamente em projetos menores ou para o desenvolvimento de APIs REST/JSON.
 
 Atualmente na versão 3.x possui como requisito mínimo o PHP 5.5.
+
+---
+
+class: center, middle
+
+## DEMO TIME 🚀
+
+.center[.gif-img[![Boooom!](./img/hacker.gif)]]
+
+---
+
+## Iniciando um projeto com Laravel
+
+Com o `composer` devidamente instalado, vamos iniciar um projetinho com o Laravel _(versão 5.1.x devido a compatibilida de PHP)_:
+
+```bash
+composer create-project laravel/laravel projeto-laravel "5.1.*"
+```
+
+--
+
+Após este comando, teremos uma nova pasta chamada `projeto-laravel` aonde nosso projeto irá evoluir.
+
+Maiores informações sobre instalação de um projeto acessem o link: <https://laravel.com/docs/5.1#installation>
+
+---
+
+## Iniciando um projeto com Laravel
+
+.center[.terminal-img[![Demo!](./img/create-project.svg)]]
+
+---
+
+## Iniciando um projeto com Laravel
+
+Na sequencia como iremos trabalhar com **Apache HTTP** nosso projeto roda com "ponto de acesso" na pasta `public`, ou seja:
+
+<http://localhost/projeto-laravel/public>
+
+.center[.print-img[![Demo!](./img/home_laravel.png)]]
+
+---
+
+## Roteamento com Laravel
+
+Estando com nosso projeto rodando a primeira coisa que entender é o arquivo de rotas.
+
+Ele fica localizado em `app/Http/routes.php`.
+
+```php
+<?php
+Route::get('ROTA-CAMINHO', function () {
+  // resultado da requisição
+});
+```
+
+---
+
+## Controllers
+
+Para mantermos nossa organização de projeto em cima do **padrão MVC** será necessário criar alguns **Controllers**, basicamente um para cada CRUD ou sessão relevante de nosso projeto.
+
+--
+
+O Laravel dispõe um utilitário de linha de comando chamado **`artisan`** o qual facilita a criação de alguns arquivos.
+
+Para criarmos nosso primeiro Controller podemos usar o seguinte comando na raiz de nosso projeto:
+
+```bash
+php artisan make:controller HomeController
+```
+
+--
+
+Após criarmos o controller iremos "melhorar" nosso arquivo de rotas (`app/Http/routes.php`):
+
+```php
+<?php
+Route::get('/', 'HomeController@index');
+```
+
+--
+
+Ou seja estamos instruindo o Laravel que sempre que alguém acessar a raiz/index de nosso projeto (`/`) que utilize a lógica disposta no controller `HomeController` na ação/função `index` do mesmo.
+
+---
+
+## Views
+
+O próximo passo de nosso padrão MVC seria a camada **View**, que nada mais são que as templates/arquivos que são "renderizados" e entregues ao navegador para exibição ao usuário no final de cada requisição.
+
+--
+
+O Laravel trabalha com PHP simples na renderização de suas views, podemos fazer um arquivo em `resources/views/index.php` em nosso projeto, que ao utilizarmos o comando `view()` iremos exibir o mesmo para o usuário.
+
+--
+
+Mas além disto o indicado é que se use a _engine_ própria do Laravel, chamada **Blade** com diversas funcionalidades úteis de reutilização de código. Para tal nossas views devem sempre possuir a extensão "`.blade.php`".
+
+---
+
+## Views
+
+Começaremos criando uma pasta `layouts` dentro de `resources/views`, feito isto podemos criar nossa primeira "template" / "esqueleto" de nossa aplicação.
+
+Chame este arquivo de `default.blade.php`:
+
+```html
+<html>
+  <head>
+    <title>App Name - @yield('title')</title>
+  </head>
+  <body>
+    <div class="container">
+      @yield('content')
+    </div>
+  </body>
+</html>
+```
+
+--
+
+Pense nesse arquivo como "esqueleto" de nosso app, todas as subseções **herdarão** ele.
+
+---
+
+## Views
+
+Agora que já temos um **layout** podemos criar nossa primeira _View de conteúdo_.
+
+--
+
+O ideal é que cada _Controller_ tenha sua própria pasta de views, logo iremos criar a pasta `home` em `resources/views` e dentro dela um arquivo para nossa action `HomeController@index`.
+
+O arquivo `resources/views/home/index.blade.php` pode ser assim:
+
+```jade
+@extends('layouts.default')
+@section('title', 'Hello World')
+
+@section('content')
+<h2>Hello World!</h2>
+@endsection
+```
+
+---
+
+## Model
+
+Para completar o padrão MVC em nosso projeto, devemos iniciar a camada de banco de dados, conhecida aqui por **M**odel.
+
+--
+
+O primeiro passo será configurar nossa conexão com o banco de dados. Isso pode ser feito em `config/database.php` ou em nosso arquivo `.env` do projeto.
+
+--
+
+Após configurarmos a conexão com o banco podemos criar o nosso primeiro Model usando o utilitário `artisan`:
+
+```bash
+php artisan make:model Aluno
+```
+
+--
+
+Após rodarmos o comando acima um novo arquivo será criado `app/Aluno.php`:
+
+```php
+<?php
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Aluno extends Model
+{
+  // não podemos esquecer de adicionar o nome da tabela
+  protected $table = 'alunos';
+}
+```
+
+---
+
+## Model
+
+Uma vez que tenhamos nosso model criado podemos voltar ao Controller e usar o mesmo:
+
+```php
+<?php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Aluno; // <--- estamos carregando o Model aqui
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        return view('home/index');
+    }
+}
+```
+
+---
+
+## Model
+
+Em nosso controller podemos montar uma query simples usando o `Eloquent ORM` do Laravel:
+
+```php
+public function index()
+{
+    $alunos = Aluno::orderBy('nome', 'asc')->get();
+
+    return view('home/index', array("alunos" => $alunos));
+}
+```
+
+--
+
+E atualizar nossa view `resources/views/home/index.blade.php` para exibir a lista de alunos:
+
+```php
+@extends('layouts.default')
+@section('title', 'Hello World')
+
+@section('content')
+<h2>Hello World!</h2>
+
+<ul>
+  <?php foreach ($alunos as $aluno) { ?>
+  <li><?php echo $aluno->nome ?></li>
+  <?php } ?>
+</ul>
+@endsection
+```
+
+---
+
+## Próximos passos:
+
+- Formulários
+- Salvar registro no banco
+- Editar registros
+- Deletar registros
+- Upload de arquivos
+- API Rest
+
+--
+
+<br />
+
+.center[<span style="font-size: 72px;">👊</span>]

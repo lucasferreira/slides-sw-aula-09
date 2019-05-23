@@ -90,15 +90,6 @@ picture {
   display: none;
 }
 
-.doc-img {
-  display: inline-block;
-  width: 675px;
-  margin-top: 16px;
-}
-.doc-img img {
-  width: 100%;
-}
-
 .php-img {
   display: inline-block;
   width: 260px;
@@ -109,8 +100,25 @@ picture {
 
 .gif-img {
   display: inline-block;
-  width: 520px;
+  width: 590px;
 }
 .gif-img img {
+  width: 100%;
+}
+
+.terminal-img {
+  display: inline-block;
+  width: 780px;
+}
+.terminal-img img {
+  width: 100%;
+}
+
+.print-img {
+  display: inline-block;
+  width: 690px;
+  margin: -10px 0 0;
+}
+.print-img img {
   width: 100%;
 }
