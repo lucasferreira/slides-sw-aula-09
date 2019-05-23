@@ -47,7 +47,7 @@ Mas isto eu já havia falado _mais ou menos_ na aula passada
 
 ## Namespaces
 
-Com o amadurecimento do ecosistema de desenvolvimento PHP impulsionado pela modernização da linguagem, diversos projetos, frameworks, bibliotecas e utilitários surgem em meio a comunidade open-source.
+Com o amadurecimento do ecossistema de desenvolvimento PHP impulsionado pela modernização da linguagem, diversos projetos, frameworks, bibliotecas e utilitários surgem em meio a comunidade open-source.
 
 Mas o que fazer quando você precisa utilizar um pacote de terceiros chamado `DBO` e em seu projeto também existe uma classe sua chamada `DBO`?
 
@@ -212,7 +212,7 @@ E que também precisássemos usar a classe `CreditCard` da Cielo:
 
 --
 
-_É justamente essa **segurança** e o uso de namespace nos da_.
+_É justamente essa **segurança** que o uso de namespace nos da_.
 
 ---
 
@@ -303,7 +303,7 @@ $carro->anda();
 
 ## autoload
 
-Outra forma de indicarmos ao mecanimos de _autoload_ a necessidade futura de uso de uma classe é diretiva `use`:
+Outra forma de indicarmos ao mecanismo de _autoload_ a necessidade futura de uso de uma classe é diretiva `use`:
 
 ```php
 <?php
@@ -365,18 +365,110 @@ Este outro link também pode ser útil para usuários do Windows: <https://www.t
 
 ## Frameworks PHP
 
+Em vez de reinventar a roda, muitos desenvolvedores PHP usam frameworks para construir aplicações web.
+
+Os frameworks abstraem muitas das preocupações de baixo nível e fornecem interfaces úteis e fáceis de utilizar para completar tarefas comuns.
+
+--
+
+Dentre os vários tipos de frameworks PHP podemos destacar os **Micro Frameworks** e os **Full-Stack Frameworks**.
+
+--
+
+Os micro-frameworks focam em rotear uma requisição HTTP para um callback ou controller, da forma mais rápida e fácil possível, e algumas vezes possuem algumas bibliotecas para auxiliar no desenvolvimento, como por exemplo pacotes básicos para bancos de dados.
+
+Quando um framework adiciona um número considerável de funcionalidades além do que está disponível em um micro-framework e passa a ser conhecido como framework completo ou full-stack. Estes normalmente possuem soluções para ORMs _(Banco de Dados)_, métodos de autenticação/login e etc.
+
+--
+
+A maioria dos frameworks populares desenvolvidos para PHP seguem de alguma forma o **padrão MVC**.
+
 ---
 
 ## Padrão MVC
+
+Este padrão de arquitetura começou a ser citado no mercado de softwares em 1979, tendo sua primeira "versão concreta" concebida por Trygve Reenskaug, então funcionário da corporação Xerox PARC.
+
+A implementação original foi descrita no artigo _“Applications Programming in Smalltalk-80: How to use Model-View-Controller”_.
+
+A ideia de Reenskaug gerou um padrão de arquitetura de aplicação cujo objetivo é separar o projeto em três camadas independentes, que são o **M**odelo, a **V**isão e o **C**ontrolador.
+
+A utilização do padrão MVC trás como benefício isolar as regras de negócios da lógica de apresentação/interface com o usuário.
+
+Isto possibilita a existência de várias interfaces _(telas)_ com o usuário que podem ser modificadas sem que haja a necessidade da alteração das regras de negócios, proporcionando assim muito mais flexibilidade e oportunidades de reuso das classes.
+
+---
+
+## Padrão MVC
+
+Este padrão não está restrito a WEB, nem somente ao PHP. É possível aplicar o padrão MVC em qualquer linguagem ou ambiente de utilização.
+
+--
+
+O modelo **(model)** consiste nos dados da aplicação, regras de negócios, lógica e funções.
+
+--
+
+Uma visão **(view)** pode ser qualquer saída de representação dos dados, como uma tela contendo uma tabela ou um diagrama.
+
+--
+
+O controlador **(controller)** faz a mediação da entrada através de lógica, convertendo-a em comandos para o modelo ou visão.
+
+--
+
+Numa analogia prática, o **Model** representará a fonte de dados (banco, tabelas e etc) para um projeto, o **Controller** irá solicitar, receber e manipular os dados obtidos através do _Model_ e finaliza enviando estes dados a **View** para que a mesma projete em tela de maneira útil.
+
+--
+
+Existem diversos frameworks populares no mercado que utilizam o padrão MVC, dentre eles: `CakePHP`, `CodeIgniter`, `Laravel`, `Symfony`, `Yii Framework` e `Zend Framework`.
 
 ---
 
 ## CakePHP
 
+O **CakePHP** é um framework escrito em PHP que tem como principais objetivos oferecer uma estrutura que possibilite aos programadores de PHP de todos os níveis desenvolverem aplicações robustas rapidamente, sem perder flexibilidade.
+
+Sua primeira versão estável foi lançada em Abril de 2005 e já possuía todos os conceitos e engenharia de software e padrões de projeto bem-conhecidos no mercado, tais como _ActiveRecord_, _Association Data Mapping_, _Convenção sobre configuração_, _Front Controller_ e _MVC (Model-View-Controller)_.
+
+Caracterizado como um framework completo _(não modular)_ de desenvolvimento web que funciona _(atualmente)_ com o PHP 7 ou no mínimo com o PHP 5.6.0.
+
+Atualmente encontra-se na **versão 3.7**, com uma versão 4.x em desenvolvimento _(que só irá rodar no PHP 7 ou superior)_ e mantendo correções e melhorias de segurança ainda na versão 2.x.
+
 ---
 
 ## Laravel
 
+O **Laravel** é um é um framework PHP livre e open-source criado por _Taylor B. Otwell_ em 2011 para o desenvolvimento de sistemas web que utilizam o padrão MVC _(model, view, controller)_.
+
+Algumas características proeminentes do Laravel são sua sintaxe simples e concisa, um **sistema modular** com gerenciador de dependências dedicado, várias formas de acesso a banco de dados relacionais e vários utilitários indispensáveis no auxílio ao desenvolvimento e manutenção de sistemas.
+
+De acordo com uma pesquisa feita em Março de 2015 com desenvolvedores, o Laravel foi listado como o **framework PHP mais popular** de 2015, seguido pelo Symfony2, Nette, CodeIgniter, Yii2 e outros. Em Agosto de 2015, o Laravel já era o principal framework de projetos PHP no GitHub.
+
+Atualmente encontra-se na **versão 5.8** com o requisito mínimo de PHP 7.1.3. Mas a **versão 5.1** possui suporte a longo termo (LTS) e roda em PHP mínimo 5.5.9.
+
+---
+
+## Zend Framework
+
+O **Zend Framework** é um framework para aplicações Web de código aberto, orientado a objetos, implementado em PHP 5.
+
+Frequentemente referido como **ZF** — é desenvolvido com o objetivo de simplificar o desenvolvimento web enquanto promove as melhores práticas na comunidade de desenvolvedores PHP.
+
+Foi concebido no início de 2005 e lançado na na Zend Conference do mesmo ano.
+
+Caracterizado como _"uma coleção de pacotes/componentes profissionais de PHP"_, atualmente na versão 3.x possui requisito mínimo da versão 5.6.x da linguagem.
+
+Altamente modular, não impõe o padrão MVC completo como obrigação.
+
 ---
 
 ## Slim Framework
+
+O **Slim Framework** é considerado um "micro framework" que visa ajudar os desenvolvedores a criarem aplicações de pequeno, médio e grande porte de forma rápida e altamente customizada.
+
+Como o foco maior no gerenciamento de requisições, não possui uma solução oficial para as camadas M e V, apesar de ser possível adaptar pacotes adicionais para concluir o padrão completo (MVC).
+
+Aliado ao uso de PDO para banco de dados, encaixa-se perfeitamente em projetos menores ou para o desenvolvimento de APIs REST/JSON.
+
+Atualmente na versão 3.x possui como requisito mínimo o PHP 5.5.
