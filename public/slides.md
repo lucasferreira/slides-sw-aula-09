@@ -25,7 +25,7 @@ count: false
 
 ## Paradigmas de programação
 
-O PHP é uma linguagem dinâmica e flexível, que suporta uma variedade de técnicas de programação, como programação funcionla e OOP.
+O PHP é uma linguagem dinâmica e flexível, que suporta uma variedade de técnicas de programação, como programação funcional e OOP.
 
 --
 
