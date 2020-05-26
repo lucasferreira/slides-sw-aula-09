@@ -39,10 +39,6 @@ O PHP atualmente possui um conjunto completo de funcionalidades de programação
 
 E em sua versão 5.3 lança o suporte a **namespaces**.
 
---
-
-Mas isto eu já havia falado _mais ou menos_ na aula passada.
-
 ---
 
 ## Namespaces
@@ -421,7 +417,7 @@ Numa analogia prática, o **Model** representará a fonte de dados (banco, tabel
 
 --
 
-Existem diversos frameworks populares no mercado que utilizam o padrão MVC, dentre eles: `CakePHP`, `CodeIgniter`, `Laravel`, `Symfony`, `Yii Framework` e `Zend Framework`.
+Existem diversos frameworks populares no mercado que utilizam o padrão MVC, dentre eles: `Laravel`, `CakePHP`, `Symfony`, `Yii Framework` e `CodeIgniter`.
 
 ---
 
@@ -433,7 +429,7 @@ Sua primeira versão estável foi lançada em Abril de 2005 e já possuía todos
 
 Caracterizado como um framework completo _(não modular)_ de desenvolvimento web que funciona _(atualmente)_ com o PHP 7 ou no mínimo com o PHP 5.6.0.
 
-Atualmente encontra-se na **versão 3.7**, com uma versão 4.x em desenvolvimento _(que só irá rodar no PHP 7 ou superior)_ e mantendo correções e melhorias de segurança ainda na versão 2.x.
+Atualmente encontra-se na **versão 4.0** _(que só roda no PHP 7 ou superior)_ e mantendo correções e melhorias de segurança ainda na versão 3.x.
 
 ---
 
@@ -445,21 +441,7 @@ Algumas características proeminentes do Laravel são sua sintaxe simples e conc
 
 De acordo com uma pesquisa feita em Março de 2015 com desenvolvedores, o Laravel foi listado como o **framework PHP mais popular** de 2015, seguido pelo Symfony2, Nette, CodeIgniter, Yii2 e outros. Em Agosto de 2015, o Laravel já era o principal framework de projetos PHP no GitHub.
 
-Atualmente encontra-se na **versão 5.8** com o requisito mínimo de PHP 7.1.3. Mas a **versão 5.1** possui suporte a longo termo (LTS) e roda em PHP mínimo 5.5.9.
-
----
-
-## Zend Framework
-
-O **Zend Framework** é um framework para aplicações Web de código aberto, orientado a objetos, implementado em PHP 5.
-
-Frequentemente referido como **ZF** — é desenvolvido com o objetivo de simplificar o desenvolvimento web enquanto promove as melhores práticas na comunidade de desenvolvedores PHP.
-
-Foi concebido no início de 2005 e lançado na na Zend Conference do mesmo ano.
-
-Caracterizado como _"uma coleção de pacotes/componentes profissionais de PHP"_, atualmente na versão 3.x possui requisito mínimo da versão 5.6.x da linguagem.
-
-Altamente modular, não impõe o padrão MVC completo como obrigação.
+Atualmente encontra-se na **versão 7.x** com o requisito mínimo de PHP 7.2.5. Mas a **versão 5.1** possui suporte a longo termo (LTS) e roda em PHP mínimo 5.5.9.
 
 ---
 
@@ -471,7 +453,7 @@ Como o foco maior no gerenciamento de requisições, não possui uma solução o
 
 Aliado ao uso de PDO para banco de dados, encaixa-se perfeitamente em projetos menores ou para o desenvolvimento de APIs REST/JSON.
 
-Atualmente na versão 3.x possui como requisito mínimo o PHP 5.5.
+Atualmente na versão 4.x possui como requisito mínimo o PHP 7.2.
 
 ---
 
