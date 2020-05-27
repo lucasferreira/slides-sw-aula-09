@@ -182,7 +182,7 @@ $cliente->save();
 
 **Antes de avançarmos:** um exemplo do mundo real aonde não seria viável "viver" sem namespaces.
 
-Imagem que em um projeto vocês precisam implementar dois meios de pagamento em sua aplicação: **PagSeguro** e **Cielo**.
+Imaginem que em um projeto vocês precisam implementar dois meios de pagamento em sua aplicação: **PagSeguro** e **Cielo**.
 
 --
 
@@ -435,7 +435,7 @@ Atualmente encontra-se na **versão 4.0** _(que só roda no PHP 7 ou superior)_ 
 
 ## Laravel
 
-O **Laravel** é um é um framework PHP livre e open-source criado por _Taylor B. Otwell_ em 2011 para o desenvolvimento de sistemas web que utilizam o padrão MVC _(model, view, controller)_.
+O **Laravel** é um framework PHP livre e open-source criado por _Taylor B. Otwell_ em 2011 para o desenvolvimento de sistemas web que utilizam o padrão MVC _(model, view, controller)_.
 
 Algumas características proeminentes do Laravel são sua sintaxe simples e concisa, um **sistema modular** com gerenciador de dependências dedicado, várias formas de acesso a banco de dados relacionais e vários utilitários indispensáveis no auxílio ao desenvolvimento e manutenção de sistemas.
 
