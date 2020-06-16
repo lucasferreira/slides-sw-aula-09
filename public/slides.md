@@ -501,7 +501,7 @@ Na sequencia como iremos trabalhar com **Apache HTTP** nosso projeto roda com "p
 
 Estando com nosso projeto rodando a primeira coisa que entender é o arquivo de rotas.
 
-Ele fica localizado em `app/Http/routes.php`.
+Ele fica localizado em `routes/web.php`.
 
 ```php
 <?php
@@ -528,7 +528,7 @@ php artisan make:controller HomeController
 
 --
 
-Após criarmos o controller iremos "melhorar" nosso arquivo de rotas (`app/Http/routes.php`):
+Após criarmos o controller iremos "melhorar" nosso arquivo de rotas (`routes/web.php`):
 
 ```php
 <?php
