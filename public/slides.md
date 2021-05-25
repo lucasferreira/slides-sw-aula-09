@@ -429,7 +429,7 @@ Sua primeira versão estável foi lançada em Abril de 2005 e já possuía todos
 
 Caracterizado como um framework completo _(não modular)_ de desenvolvimento web que funciona _(atualmente)_ com o PHP 7 ou no mínimo com o PHP 5.6.0.
 
-Atualmente encontra-se na **versão 4.0** _(que só roda no PHP 7 ou superior)_ e mantendo correções e melhorias de segurança ainda na versão 3.x.
+Atualmente encontra-se na **versão 4.1** _(que só roda no PHP 7 ou superior)_ e mantendo correções e melhorias de segurança ainda na versão 3.x.
 
 ---
 
@@ -441,7 +441,7 @@ Algumas características proeminentes do Laravel são sua sintaxe simples e conc
 
 De acordo com uma pesquisa feita em Março de 2015 com desenvolvedores, o Laravel foi listado como o **framework PHP mais popular** de 2015, seguido pelo Symfony2, Nette, CodeIgniter, Yii2 e outros. Em Agosto de 2015, o Laravel já era o principal framework de projetos PHP no GitHub.
 
-Atualmente encontra-se na **versão 7.x** com o requisito mínimo de PHP 7.2.5. Mas a **versão 5.1** possui suporte a longo termo (LTS) e roda em PHP mínimo 5.5.9.
+Atualmente encontra-se na **versão 8.x** com o requisito mínimo de PHP 7.3.x. Mas a **versão 5.1** possui suporte a longo termo (LTS) e roda em PHP mínimo 5.5.9.
 
 ---
 
