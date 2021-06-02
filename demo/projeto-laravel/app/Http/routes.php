@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/teste/{id}', 'HomeController@teste');
+
+Route::get('/cursos', 'CursosController@index');
+Route::get('/cursos/create', 'CursosController@create');
+Route::post('/cursos/create', 'CursosController@store');
+Route::get('/cursos/edit/{id}', 'CursosController@edit');
+Route::post('/cursos/edit/{id}', 'CursosController@update');
+Route::get('/cursos/destroy/{id}', 'CursosController@destroy');
