@@ -467,17 +467,17 @@ class: center, middle
 
 ## Iniciando um projeto com Laravel
 
-Com o `composer` devidamente instalado, vamos iniciar um projetinho com o Laravel _(versão 5.1.x devido a compatibilida de PHP)_:
+Com o `composer` devidamente instalado, vamos iniciar um projetinho com o Laravel _(versão 6.x devido a compatibilida de PHP 7)_:
 
 ```bash
-composer create-project laravel/laravel projeto-laravel "5.1.*"
+composer create-project laravel/laravel projeto-laravel "6.*"
 ```
 
 --
 
 Após este comando, teremos uma nova pasta chamada `projeto-laravel` aonde nosso projeto irá evoluir.
 
-Maiores informações sobre instalação de um projeto acessem o link: <https://laravel.com/docs/5.1#installation>
+Maiores informações sobre instalação de um projeto acessem o link: <https://laravel.com/docs/6.x/installation>
 
 ---
 
@@ -552,6 +552,8 @@ O Laravel trabalha com PHP simples na renderização de suas views, podemos faze
 --
 
 Mas além disto o indicado é que se use a _engine_ própria do Laravel, chamada **Blade** com diversas funcionalidades úteis de reutilização de código. Para tal nossas views devem sempre possuir a extensão "`.blade.php`".
+
+Mais detalhes sobre a sintax/engine Blade: <https://laravel.com/docs/6.x/blade>
 
 ---
 
