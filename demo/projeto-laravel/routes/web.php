@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +10,16 @@
 |
  */
 
+// uma rota pode ser GET, POST, PUT ou DELETE
 Route::get('/', 'HomeController@index');
 
+// uma rota de exemplo POST para cadastrar algo no banco
+Route::post('/create', 'HomeController@create')->name('home.create');
+
+Route::get('/delete/{id}', 'HomeController@delete')->name('home.delete');
+
+// rota genérica apenas para testar a emissão de uma view para o navegador
 Route::get('/teste', function ()
 {
-	return view('teste');
+	return view('teste'); // completar com .php
 });

@@ -8,5 +8,6 @@
 <body>
   <h2>Olá esse é um teste</h2>
   <p>Você não acredita?</p>
+  <p><?php echo date("Y-m-d"); ?></p>
 </body>
 </html>
